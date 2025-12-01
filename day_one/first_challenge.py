@@ -50,11 +50,11 @@ def stampa_rotella_e_risultato(risultato):
     """
     print(rotella)
     print(f"""
-    ################################
-    ##                            ##
-    ##  Password trovata: {risultato}    ##
-    ##                            ##
-    ################################
+         ################################
+         ##                            ##
+         ##  Password trovata: {risultato}    ##
+         ##                            ##
+         ################################
           """)
     
 password = calcola_password_da_lista(istruzioni)
