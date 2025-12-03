@@ -29,22 +29,29 @@ def id_non_validi(n: int) -> bool:
     return False
 
 
-def somma_non_validi_in_range(start: int, end: int) -> int:
+def somma_non_validi_da_range(lista_range: list[str]) -> int:
     """
-    Somma tutti gli ID invalidi nel range [start, end].
+    Prende una lista di range del tipo 'start-end',
+    genera tutti i numeri nei range,
+    controlla quali sono non validi,
+    e restituisce la somma degli ID invalidi.
     """
     somma = 0
-    for n in range(start, end + 1):
-        if id_non_validi(n):
-            somma += n
+
+    for r in lista_range:
+        start, end = r.split("-")
+        start, end = int(start), int(end)
+
+        for n in range(start, end + 1): # Itera tra tutti i numeri del range
+            if id_non_validi(n):
+                somma += n
+
     return somma
 
 
-# somma finale
-somma_ID_invalidi = 0
+def main():
+    print(f"Somma degli ID non validi: {somma_non_validi_da_range(lista_range)}")
 
-for r in lista_range:
-    start, end = map(int, r.split("-"))
-    somma_ID_invalidi += somma_non_validi_in_range(start, end)
 
-print("Somma totale degli ID non validi:", somma_ID_invalidi)
+if __name__ == "__main__":
+    main()

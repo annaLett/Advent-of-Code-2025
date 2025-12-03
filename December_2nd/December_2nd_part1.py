@@ -22,7 +22,7 @@ def somma_non_validi_da_range(lista_range: list[str]) -> int:
     """
     Prende una lista di range del tipo 'start-end',
     genera tutti i numeri nei range,
-    controlla quali sono invalidi,
+    controlla quali sono non validi,
     e restituisce la somma degli ID invalidi.
     """
     somma = 0
