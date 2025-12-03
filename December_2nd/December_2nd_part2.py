@@ -10,6 +10,25 @@ lista_range = id_input.split(",")
 
 
 def id_non_validi(n: int) -> bool:
+    """
+    Controlla se un ID è "non valido", cioè se il suo valore
+    è formato dalla ripetizione perfetta di una sequenza più corta
+    almeno due volte.
+
+    Esempi di ID non validi:
+    - 123123   → sequenza '123' ripetuta 2 volte
+    - 12121212 → sequenza '12' ripetuta 4 volte
+    - 7777777  → sequenza '7' ripetuta 7 volte
+
+    Logica:
+    1. Converte il numero in stringa.
+    2. Prova tutte le possibili lunghezze di una sequenza base.
+    3. Se la lunghezza totale non è divisibile per quella sequenza,
+       la scarta (non può essere ripetuta perfettamente).
+    4. Costruisce il numero ripetendo la sequenza base.
+    5. Se coincide con il numero originale, l'ID è non valido.
+
+    """
     s = str(n)
     L = len(s)
 
